@@ -1,0 +1,77 @@
+{
+  "name": "lambda-calc-test",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "untyped-lambda-calc": "ts-node src/untyped-lambda-calc.ts",
+    "test": "ava"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
+    "eslint-config-mojiscript": "^1.2.0",
+    "eslint-plugin-better": "^0.1.5",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-prefer-arrow": "^1.1.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "fast-check": "^1.16.0",
+    "ava": "avajs/ava#9b416850ce133c2bb787d756f23671185fe76d0f",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  },
+  "ava": {
+    "files": [
+      "test/**/*"
+    ],
+    "sources": [
+      "src/**/*"
+    ],
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "mojiscript"
+    ],
+    "rules": {
+      "no-unused-vars": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "test/**/*"
+        ],
+        "rules": {
+          "arrow-body-style": "off",
+          "fp/no-nil": "off"
+        }
+      }
+    ]
+  }
+}
